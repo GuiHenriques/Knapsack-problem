@@ -8,7 +8,7 @@ O Knapsack Problem consiste em escolher um conjunto de objetos de um conjunto da
 
 ## Ilustração 
 
-![Ilustração do Problema da Mochila](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/375px-Knapsack.svg.png)
+![Ilustração do Problema da Mochila](https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png)
 
 Na ilustração acima, a mochila tem capacidade para 50kg e existem 5 objetos com diferentes pesos e valores. O objetivo é escolher o conjunto de objetos que caibam na mochila e tenham o maior valor total possível.
 
