@@ -5,13 +5,18 @@ class Mochila:
         self.peso_maximo = peso_maximo
         self.peso_ocupado = 0
         self.itens = list()
-        self.valor = 0
+        self.valor_acumulado = 0
+
+    def adicionar_item(self, item):
+        if self.peso_ocupado + item.peso > self.peso_maximo:
+            return False
+        self.itens.append(item)
+        self.peso_ocupado += item.peso
+        self.valor_acumulado += item.valor
+        return True
 
     def get_peso_max(self):
         return self.peso_maximo
-
-    def set_peso_max(self, x):
-        self.peso_maximo = x
 
     def get_peso_ocupado(self):
         return self.peso_ocupado
@@ -22,11 +27,12 @@ class Mochila:
     def get_valor(self):
         return self.valor
 
-
-class item:
-    def __init__(self):
-        self.itens = dict()       
-        self.Vu = dict()    # Vu = valor utilitário (valor/peso)        
+class Item:
+    def __init__(self, peso, valor, etiqueta) -> None:
+        self.peso = peso
+        self.valor = valor
+        self.etiqueta = etiqueta
+        self.vu = valor/peso
 
     def get_preco_item(self):
         return self.valor_item
@@ -36,24 +42,26 @@ class item:
 
     def get_etiqueta(self):
         return self.etiqueta
-    
+
+    def get_vu(self):
+        return self.vu
+
+
+class ManejadorItem:
+    def __init__(self):
+        self.itens = list()      
+
     def get_itens(self):
         return self.itens
-    
-    def get_Vu(self):
-        return self.Vu
-    
+        
     def ordenar_Vu(self):
-        return sorted(self.Vu.items(), key=itemgetter(1)) # ordena do menor pro maior
+        self.itens =  sorted(self.get_itens(), key=lambda item: item.get_vu(), reverse=True) # ordena do menor pro maior
     
-    def add_item(self, etiqueta, peso, valor):
-        self.itens[etiqueta] = [peso, valor]
-        self.Vu[etiqueta] = valor/peso
+    def get_by_etiqueta(self, etiqueta):
+        for item in self.itens:
+            if item.etiqueta == etiqueta:
+                return item
+        return "Item não encontrado"
 
-    
-    
-    
-
-
-
-    
+    def add_item(self, item):
+        self.itens.append(item)
