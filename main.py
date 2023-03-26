@@ -1,10 +1,9 @@
 from knapsack import *
 from random import randint
 
-itens = []
 
+# função que cria os casos de teste
 def casos_teste(n):
-
     def letter(n):
         start = 65
         n_alfabeto = 26
@@ -22,17 +21,21 @@ def casos_teste(n):
         etiqueta = letter(i)
         itens.append(Item(peso, valor, etiqueta))
 
-# Numero de casos de teste
-casos_teste(20)
+itens = []
+casos_teste(80)
 
-mochila = Mochila(300)
 
+
+mochila = Mochila(200)
 manejador = ManejadorItem()
 for item in itens:
     manejador.add_item(item)
 
 
+# função que ordena os itens (objetos) pelo atributo vu (valor utilitário)
 manejador.ordenar_Vu()
+
+
 
 for item in manejador.get_itens():
     if mochila.adicionar_item(item):
