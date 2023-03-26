@@ -18,7 +18,7 @@ def casos_teste(n):
 
     for i in range(1, n):
         peso = peso_valor(1, 100)
-        valor = peso_valor(0, 100)
+        valor = peso_valor(1, 100)
         etiqueta = letter(i)
         itens.append(Item(peso, valor, etiqueta))
 
