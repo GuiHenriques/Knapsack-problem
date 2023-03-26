@@ -26,7 +26,7 @@ casos_teste(80)
 
 
 
-mochila = Mochila(200)
+mochila = Mochila(180)
 manejador = ManejadorItem()
 for item in itens:
     manejador.add_item(item)
