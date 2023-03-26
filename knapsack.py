@@ -27,6 +27,8 @@ class Mochila:
     def get_valor(self):
         return self.valor
 
+
+
 class Item:
     def __init__(self, peso, valor, etiqueta) -> None:
         self.peso = peso
@@ -35,16 +37,17 @@ class Item:
         self.vu = valor/peso
 
     def get_preco_item(self):
-        return self.valor_item
+        return self.valor
 
     def get_peso_item(self):
-        return self.peso_item
+        return self.peso
 
     def get_etiqueta(self):
         return self.etiqueta
 
     def get_vu(self):
         return self.vu
+
 
 
 class ManejadorItem:
