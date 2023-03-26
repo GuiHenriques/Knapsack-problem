@@ -13,8 +13,8 @@ y2 = [i.get_preco_item() for i in(mochila.get_itens())]
 width = 0.40
   
 # plot data in grouped manner of bar type
-plt.bar(x-0.2, y1, width)
-plt.bar(x+0.2, y2, width)
+plt.bar(x-0.2, y1, width, color='#122C3B')
+plt.bar(x+0.2, y2, width, color='#4ABAFA')
 plt.xticks(x, [i.get_etiqueta() for i in(mochila.get_itens())])
 plt.legend(["Peso do item", "Valor do item"])
 
