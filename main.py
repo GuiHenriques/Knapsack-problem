@@ -22,9 +22,8 @@ def casos_teste(n):
         etiqueta = letter(i)
         itens.append(Item(peso, valor, etiqueta))
 
+# Numero de casos de teste
 casos_teste(20)
-print(itens)
-
 
 mochila = Mochila(300)
 
