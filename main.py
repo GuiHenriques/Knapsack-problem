@@ -26,8 +26,15 @@ itens = [
     Item(80, 20, 'W'),
     Item(50, 110, 'X'),
     Item(10, 60, 'Y'),
-    Item(70, 770, 'z'), 
+    Item(70, 770, 'Z'),
+    Item(48, 56, 'AB'),
+    Item(34, 56, 'AC'),
+    Item(45, 67, 'AD'),
+    Item(56, 78, 'AE'),
+    Item(34, 23, 'AF'),
+    Item(45, 343, 'AG') 
 ]
+
 
 mochila = Mochila(300)
 
@@ -44,7 +51,8 @@ for item in manejador.get_itens():
     else:
         print(f"Item {item.get_etiqueta()} não coube")
         continue
+    
 
-print('='*10)
+print('='*20)
 print("valor", mochila.valor_acumulado)
 print(f"{mochila.peso_ocupado/mochila.peso_maximo*100:.2f} % de {mochila.peso_maximo}kg")
