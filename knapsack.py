@@ -15,6 +15,11 @@ class Mochila:
         self.valor_acumulado += item.valor
         return True
 
+    def reset(self):
+        self.itens.clear()
+        self.peso_ocupado = 0
+        self.valor_acumulado = 0
+
     def get_peso_max(self):
         return self.peso_maximo
 
@@ -58,7 +63,10 @@ class ManejadorItem:
         return self.itens
         
     def ordenar_Vu(self):
-        self.itens =  sorted(self.get_itens(), key=lambda item: item.get_vu(), reverse=True) # ordena do menor pro maior
+        self.itens = sorted(self.get_itens(), key=lambda item: item.get_vu(), reverse=True) # ordena do menor pro maior
+    
+    def ordenar_valor(self):
+        self.itens = sorted(self.get_itens(), key=lambda item: item.valor, reverse=True)
     
     def get_by_etiqueta(self, etiqueta):
         for item in self.itens:
