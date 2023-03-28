@@ -22,7 +22,7 @@ def casos_teste(n):
         itens.append(Item(peso, valor, etiqueta))
 
 itens = []
-casos_teste(80)
+casos_teste(100)
 
 
 
