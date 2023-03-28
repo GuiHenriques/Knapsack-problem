@@ -26,7 +26,7 @@ casos_teste(80)
 
 
 
-mochila = Mochila(180)
+mochila = Mochila(120)
 manejador = ManejadorItem()
 for item in itens:
     manejador.add_item(item)
@@ -46,5 +46,6 @@ for item in manejador.get_itens():
     
 
 print('='*20)
-print("valor", mochila.valor_acumulado)
-print(f"{mochila.peso_ocupado/mochila.peso_maximo*100:.2f} % de {mochila.peso_maximo}kg")
+print("valor:", mochila.valor_acumulado)
+print(f"peso: {mochila.peso_ocupado/mochila.peso_maximo*100:.2f} % de {mochila.peso_maximo}kg")
+print(f"Quantidade de itens adicionados: {len(mochila.get_itens())}")
