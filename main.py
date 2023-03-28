@@ -22,7 +22,7 @@ def casos_teste(n):
         itens.append(Item(peso, valor, etiqueta))
 
 itens = []
-casos_teste(80)
+casos_teste(100)
 
 
 
@@ -38,9 +38,10 @@ for item in manejador.get_itens():
     mochila.adicionar_item(item)
 
 
-print("Ordenação por Valor Utilitário")
+print("\033[34mOrdenação por Valor Utilitário\033[m")
 print("Valor: R$", mochila.valor_acumulado)
 print(f"{mochila.peso_ocupado/mochila.peso_maximo*100:.2f}% de {mochila.peso_maximo}kg")
+print(f"Quantidade de itens adicionados: {len(mochila.get_itens())}")
 
 # Limpar mochila
 mochila.reset()
@@ -51,6 +52,7 @@ manejador.ordenar_valor()
 for item in manejador.get_itens():
     mochila.adicionar_item(item)
 
-print("Ordenação por Valor ")
+print("\033[34mOrdenação por Valor\033[m")
 print("Valor: R$", mochila.valor_acumulado)
 print(f"{mochila.peso_ocupado/mochila.peso_maximo*100:.2f}% de {mochila.peso_maximo}kg")
+print(f"Quantidade de itens adicionados: {len(mochila.get_itens())}")
